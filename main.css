@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {}
+
+.header {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    font-size: 60px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.list_card {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 10px;
+}
+
+.card_item {
+    width: 33.33333%;
+    padding: 16px 16px 24px 16px;
+    margin-left: 24px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.card_item.infected {
+    border-bottom: 10px solid rgba(0, 0, 255, 0.5);
+}
+
+.card_item.recovered {
+    border-bottom: 10px solid rgba(0, 255, 0, 0.5);
+}
+
+.card_item.deaths {
+    border-bottom: 10px solid rgba(255, 0, 0, 0.5);
+}
