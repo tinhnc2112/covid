@@ -87,6 +87,21 @@ fetchDataCommon().then(dataCommon => {
     document.querySelector('.deaths').innerHTML = htmlDeaths
 
 })
+const fetchCountries = async () => {
+    let response = await fetch(apiCommon + '/countries')
+    let dataCountries = await response.json()
+    return dataCountries
+}
+
+fetchCountries().then(countries => {
+    debugger
+    let html = countries.countries.map((country) =>
+        `<option>${country.name}</option>`,
+    )
+
+    // console.log(countries)
+    document.querySelector('.option_countries').innerHTML = html
+})
 const fetchDataDetail = async () => {
     let response = await fetch(apiDetail)
     let dataDetail = await response.json()
@@ -94,6 +109,7 @@ const fetchDataDetail = async () => {
 }
 
 fetchDataDetail().then(dataDetail => {
+    console.log(dataDetail)
     const datas = {
         labels: dataDetail.map(({ dateChecked }) =>
             new Date(dateChecked).toLocaleDateString(),
@@ -125,8 +141,8 @@ fetchDataDetail().then(dataDetail => {
         data: datas,
         options: {}
     };
-    const myChart = new Chart(
-        document.getElementById('myChart'),
+    const covid_chart = new Chart(
+        document.getElementById('covid_chart'),
         config
     );
 });

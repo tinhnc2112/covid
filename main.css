@@ -14,6 +14,12 @@ body {}
     text-align: center;
 }
 
+.option {
+    text-align: center;
+    border: 0px;
+    outline: 0px;
+}
+
 .list_card {
     display: flex;
     margin-left: auto;
